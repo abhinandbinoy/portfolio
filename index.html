@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Abhinand Binoy |Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cybersecurity portfolio of Abhinand Binoy - Aspiring Penetration Tester and Offensive Security Enthusiast." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0b0d15;
+      --card: #111422;
+      --accent: #00ff99;
+      --accent-soft: rgba(0, 255, 153, 0.08);
+      --accent-2: #19a3ff;
+      --text: #f5f7ff;
+      --muted: #9ba0b8;
+      --border: #202538;
+      --danger: #ff4b4b;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --transition: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0d1b2a 0, #02030a 45%, #000000 100%);
+      color: var(--text);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(3, 5, 13, 0.98), rgba(3, 5, 13, 0.85));
+      border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 0, var(--accent) 0, #0f172a 45%, #000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(0, 255, 153, 0.45);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .nav-cta span.icon {
+      font-size: 1.1rem;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.7rem 1.5rem 3rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.18rem 0.65rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw + 1rem, 3.4rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      border-radius: var(--radius-full);
+      padding: 0.7rem 1.35rem;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: var(--transition);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #020617;
+      box-shadow: 0 16px 45px rgba(0, 255, 153, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(0, 255, 153, 0.4);
+    }
+
+    .btn-secondary {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.15);
+    }
+
+    .btn-icon {
+      font-size: 1.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      opacity: 0.7;
+    }
+
+    .hero-meta-value {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    /* Hero profile */
+
+    .hero-profile-card {
+      border-radius: 26px;
+      background: radial-gradient(circle at 0 0, #1e293b 0, #020617 45%, #000 100%);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-profile-glow {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0, rgba(0, 255, 153, 0.13) 0, transparent 55%),
+        radial-gradient(circle at 90% 30%, rgba(37, 99, 235, 0.13) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .profile-photo-wrapper {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px dashed rgba(148, 163, 184, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      position: relative;
+      background: radial-gradient(circle at 30% 0, #111827 0, #020617 60%);
+    }
+
+    .profile-photo-inner {
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      background: repeating-linear-gradient(
+        135deg,
+        #020617,
+        #020617 6px,
+        #020817 6px,
+        #020817 12px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .profile-photo-label {
+      position: absolute;
+      bottom: -0.65rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      padding: 0.12rem 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .hero-profile-heading {
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-profile-sub {
+      font-size: 0.78rem;
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.16rem 0.6rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .tag-accent {
+      border-color: rgba(34, 197, 94, 0.8);
+      color: var(--accent);
+      background: rgba(22, 163, 74, 0.08);
+    }
+
+    .hero-profile-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px dashed rgba(148, 163, 184, 0.35);
+      padding-top: 0.7rem;
+      margin-top: 0.7rem;
+    }
+
+    .hero-profile-footer span strong {
+      color: var(--accent-2);
+    }
+
+    .hero-profile-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .hero-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.9);
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.2rem 0;
+      border-top: 1px solid rgba(30, 64, 175, 0.55);
+    }
+
+    section:first-of-type {
+      border-top: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title-badge {
+      font-size: 0.75rem;
+      padding: 0.12rem 0.5rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 280px;
+    }
+
+    /* About */
+
+    .about-text {
+      font-size: 0.96rem;
+      color: var(--muted);
+      max-width: 48rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: linear-gradient(150deg, rgba(15, 23, 42, 0.95), #020617);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 1rem 1rem 0.9rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(0, 255, 153, 0.09), transparent 55%);
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+
+    .skill-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .skill-title span.icon {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .skill-items {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-pill {
+      padding: 0.12rem 0.55rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      white-space: nowrap;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      background: radial-gradient(circle at 0 0, rgba(15, 118, 110, 0.16), rgba(15, 23, 42, 0.96));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.8);
+      border-color: var(--accent);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .project-list {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-list li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.78rem;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+    }
+
+    .project-chip {
+      padding: 0.12rem 0.6rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(34, 197, 94, 0.6);
+      color: var(--accent);
+      background: rgba(22, 163, 74, 0.07);
+      white-space: nowrap;
+    }
+
+    /* Certifications & Soft skills */
+
+    .certs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .cert-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 0.9rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, rgba(0, 255, 153, 0.45), rgba(59, 130, 246, 0.2));
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+
+    .cert-card:hover::before {
+      opacity: 0.7;
+    }
+
+    .cert-card-title {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .cert-card-org {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .soft-pill {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .soft-pill span.icon {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* Contact */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .contact-info-card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 1rem 1.1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-info-card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-link-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .contact-link-item a {
+      color: var(--text);
+      font-size: 0.86rem;
+      word-break: break-word;
+    }
+
+    .contact-link-item a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      padding: 1.1rem 1.2rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .form-field {
+      flex: 1 1 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .form-field label {
+      font-size: 0.8rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      background: #020617;
+      border-radius: 10px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 0.5rem 0.7rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+      font-family: inherit;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(0, 255, 153, 0.4);
+      background: #020617;
+    }
+
+    .form-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 0.7rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .form-note span {
+      color: var(--accent-2);
+    }
+
+    .form-button {
+      border-radius: var(--radius-full);
+      padding: 0.6rem 1.3rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: #020617;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.4);
+      transition: var(--transition);
+    }
+
+    .form-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 23px 55px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      background: #020617;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem 1rem;
+      text-align: center;
+      font-size: 0.77rem;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 1.2rem;
+      }
+
+      .hero-profile-card {
+        order: -1;
+        max-width: 340px;
+        margin: 0 auto 0.5rem;
+      }
+
+      .nav-links {
+        position: absolute;
+        right: 1.5rem;
+        top: 58px;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 0.7rem 0.9rem;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.45);
+        flex-direction: column;
+        gap: 0.4rem;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding-inline: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn,
+      .form-button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="nav-logo-mark">AB</div>
+          <div class="nav-title">Portfolio</div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">☰</button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certs">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span class="icon">●</span>
+          <span>Open to opportunities</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Hero -->
+        <section class="hero" id="top">
+          <div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Penetration Testing & Offensive Security</span>
+            </div>
+            <h1 class="hero-title">Abhinand Binoy</h1>
+            <div class="hero-subtitle">Aspiring Penetration Tester | Offensive Security Enthusiast</div>
+            <p class="hero-text">
+              Focused on identifying and exploiting vulnerabilities in web applications and networks using real-world style labs, tools, and workflows inspired by industry practices.
+            </p>
+
+            <div class="hero-actions">
+              <!-- TODO: Add your real resume link to href -->
+              <a class="btn btn-primary" href="/portfolio/doc/Abhinand_Binoy.pdf" download>
+                <span class="btn-icon">⬇</span>
+                <span>Download Resume (PDF)</span>
+              </a>
+              <button class="btn btn-secondary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                <span class="btn-icon">✉</span>
+                <span>Contact Me</span>
+              </button>
+            </div>
+
+            <div class="hero-meta">
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Focus</span>
+                <span class="hero-meta-value">Web App Pentesting · Labs</span>
+              </div>
+              <!-- <div class="hero-meta-item">
+                <span class="hero-meta-label">Experience</span>
+                <span class="hero-meta-value">TryHackMe · PortSwigger · DVWA · Juice Shop</span>
+              </div> -->
+            </div>
+          </div>
+
+          <aside class="hero-profile-card">
+            <div class="hero-profile-glow"></div>
+
+            <div class="profile-photo-wrapper">
+  <div class="profile-photo-inner">
+    <img src="/portfolio/doc/profile.jpg" alt="Profile Photo" style="width:100%; height:100%; border-radius:50%; object-fit:cover;" />
+  </div>
+  <div class="profile-photo-label">Profile Photo</div>
+</div>
+
+            <h3 class="hero-profile-heading">Offensive Security Learner</h3>
+            <p class="hero-profile-sub">
+              Building hands-on skills by breaking intentionally vulnerable labs, analyzing attack surfaces, and practicing real exploitation workflows.
+            </p>
+
+            <div class="hero-profile-tags">
+              <span class="tag tag-accent">VAPT</span>
+              <span class="tag tag-accent">Certified Penetration Tester</span>
+              <span class="tag tag-accent">Red Team Mindset</span>
+            </div>
+
+            <div class="hero-profile-footer">
+              <span>Primary stack:<br /><strong>Nmap · Burp Suite · Kali</strong></span>
+              <span class="hero-profile-status">
+                <span class="hero-status-dot"></span>
+                <span>Available for internships</span>
+              </span>
+            </div>
+          </aside>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+          <div class="section-header">
+            <h2 class="section-title">
+              About Me
+              <span class="section-title-badge">Intro</span>
+            </h2>
+          </div>
+          <div class="about-text">
+            Penetration Testing and Offensive Security enthusiast with strong hands-on experience in identifying, analyzing, and exploiting web application vulnerabilities. Skilled in reconnaissance, enumeration, network scanning, and attack simulation through real-world style labs. Experienced with TryHackMe and PortSwigger Web Security Academy modules, focusing on OWASP Top 10 and modern attack techniques. Motivated to continue improving practical skills and contribute to real-world security assessments.
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+          <div class="section-header">
+            <h2 class="section-title">
+              Skills
+              <span class="section-title-badge">Technical</span>
+            </h2>
+            <p class="section-subtitle">
+              Core tools and techniques used in labs, practice environments, and self-learning focused on offensive security.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card">
+              <div class="skill-title">
+                <span>Cybersecurity Tools</span>
+                <span class="icon">🛠</span>
+              </div>
+              <div class="skill-items">
+                <span class="skill-pill">Nmap</span>
+                <span class="skill-pill">Burp Suite</span>
+                <span class="skill-pill">Metasploit</span>
+                <span class="skill-pill">Hydra</span>
+                <span class="skill-pill">Gobuster</span>
+                <span class="skill-pill">Dirsearch</span>
+                <span class="skill-pill">Nikto</span>
+                <span class="skill-pill">SQLmap</span>
+                <span class="skill-pill">John the Ripper</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">
+                <span>Web Security Techniques</span>
+                <span class="icon">🌐</span>
+              </div>
+              <div class="skill-items">
+                <span class="skill-pill">XSS</span>
+                <span class="skill-pill">SQL Injection</span>
+                <span class="skill-pill">IDOR</span>
+                <span class="skill-pill">Broken Access Control</span>
+                <span class="skill-pill">Brute Forcing</span>
+                <span class="skill-pill">Clickjacking</span>
+                <span class="skill-pill">OS Command Injection</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">
+                <span>Operating Systems</span>
+                <span class="icon">💻</span>
+              </div>
+              <div class="skill-items">
+                <span class="skill-pill">Kali Linux</span>
+                <span class="skill-pill">Windows</span>
+                <span class="skill-pill">Tails OS</span>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-title">
+                <span>Programming (Basic)</span>
+                <span class="icon">📜</span>
+              </div>
+              <div class="skill-items">
+                <span class="skill-pill">HTML</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">SQL</span>
+              </div>
+            </div>
+
+            
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+          <div class="section-header">
+            <h2 class="section-title">
+              Projects & Labs
+              <span class="section-title-badge">Hands-On</span>
+            </h2>
+            <p class="section-subtitle">
+              Practice environments used to simulate real-world attack paths, test techniques, and refine methodology.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3 class="project-title">TryHackMe – RT Pen 101</h3>
+              <p class="project-tagline">Beginner-friendly penetration testing lab focused on full kill-chain workflow.</p>
+              <ul class="project-list">
+                <li>Performed scanning, enumeration, exploitation and basic privilege escalation.</li>
+                <li>Mapped services and attack surface before exploiting identified weaknesses.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="project-chip">Nmap</span>
+                <span class="project-chip">Burp Suite</span>
+                <span class="project-chip">Gobuster</span>
+                <span class="project-chip">Dirsearch</span>
+                <span class="project-chip">Hydra</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3 class="project-title">PortSwigger Web Security Academy</h3>
+              <p class="project-tagline">Structured labs focused on modern web app vulnerabilities and exploit chains.</p>
+              <ul class="project-list">
+                <li>Practiced XSS, SQLi, authentication flaws and access control issues.</li>
+                <li>Improved exploitation workflow, payload crafting, and debugging of failed attempts.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="project-chip">OWASP Top 10</span>
+                <span class="project-chip">Burp Suite</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3 class="project-title">DVWA Testing</h3>
+              <p class="project-tagline">Deliberately Vulnerable Web App for practicing classic web attacks.</p>
+              <ul class="project-list">
+                <li>Tested XSS, SQL Injection, Brute Force and Command Injection modules.</li>
+                <li>Observed how configuration levels change exploit difficulty and impact.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="project-chip">XSS</span>
+                <span class="project-chip">SQLi</span>
+                <span class="project-chip">Command Injection</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3 class="project-title">OWASP Juice Shop</h3>
+              <p class="project-tagline">Gamified vulnerable app covering a wide range of web security issues.</p>
+              <ul class="project-list">
+                <li>Solved challenges involving XSS, SQLi and authentication weaknesses.</li>
+                <li>Linked vulnerabilities to real-world risks and mitigation strategies.</li>
+              </ul>
+              <div class="project-meta">
+                <span class="project-chip">OWASP Top 10</span>
+                <span class="project-chip">Auth Weaknesses</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certs">
+          <div class="section-header">
+            <h2 class="section-title">
+              Certifications
+              <span class="section-title-badge">Verified</span>
+            </h2>
+          </div>
+
+          <div class="certs-list">
+            <div class="cert-card">
+              <div class="cert-card-title">Certified Penetration Tester (CPT)</div>
+              <div class="cert-card-org">RedTeam Hacker Academy</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-card-title">Introduction to Dark Web, Anonymity & Cryptocurrency</div>
+              <div class="cert-card-org">EC-Council</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-card-title">SQL Injection Attacks</div>
+              <div class="cert-card-org">EC-Council</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Soft skills -->
+        <section id="soft-skills">
+          <div class="section-header">
+            <h2 class="section-title">
+              Soft Skills
+              <span class="section-title-badge">Profile</span>
+            </h2>
+          </div>
+          <div class="soft-skills">
+            <div class="soft-pill">
+              <span class="icon">🧠</span>
+              <span>Problem Solving</span>
+            </div>
+            <div class="soft-pill">
+              <span class="icon">⚡</span>
+              <span>Quick Learner</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+          <div class="section-header">
+            <h2 class="section-title">
+              Contact
+              <span class="section-title-badge">Connect</span>
+            </h2>
+            <p class="section-subtitle">
+              Reach out for cybersecurity opportunities, collaboration, or networking in offensive security and penetration testing.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <div class="contact-info-card">
+              <p>Let’s connect and talk about web application security, penetration testing labs or security-focused roles.</p>
+              <div class="contact-links">
+                <div class="contact-link-item">
+                  <div class="contact-link-icon">✉</div>
+                  <div>
+                    <div>Email</div>
+                    <a href="mailto:abhinandbinoy6@gmail.com">abhinandbinoy6@gmail.com</a>
+                  </div>
+                </div>
+                <div class="contact-link-item">
+                  <div class="contact-link-icon">☎</div>
+                  <div>
+                    <div>Phone</div>
+                    <a href="tel:9074715459">9074715459</a>
+                  </div>
+                </div>
+                <div class="contact-link-item">
+                  <div class="contact-link-icon">in</div>
+                  <div>
+                    <div>LinkedIn</div>
+                    <a href="https://linkedin.com/in/abhinandbinoy" target="_blank" rel="noopener noreferrer">
+                      linkedin.com/in/abhinandbinoy
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <form class="contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="contact-form-row">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input id="name" class="form-input" type="text" placeholder="Your name" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" class="form-input" type="email" placeholder="your@email.com" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-textarea" placeholder="Write your message..." required></textarea>
+              </div>
+
+              <div class="form-footer">
+                <div class="form-note">
+                  This form is a static placeholder. <span>You can connect it later</span> using a form service.
+                </div>
+                <button class="form-button" type="submit">
+                  <span>Send Message</span> <span>➜</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div> -->
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        © 2025 Abhinand Binoy | Cybersecurity Portfolio
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleNav() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert("This form is currently a static demo.\nYou can wire it to a real backend or form service later.");
+    }
+  </script>
+</body>
+</html>
